@@ -14,7 +14,11 @@ pipeline {
         }
 
         stage('Building image') {
-            steps{
+            when {expression { env.GIT_BRANCH == "origin/master" }}     
+            steps {
+                git branch: 'master',
+                credentialsId: 'GithubToken',
+                url: 'https://github.com/Nautilus-Technologies/Test-Environment.git'
                 script {
                     docker.build registry + ":$BUILD_NUMBER"
                 }
