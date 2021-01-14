@@ -17,7 +17,7 @@ pipeline {
             when {expression { env.GIT_BRANCH == "origin/master" }}     
             steps {
                 git branch: 'master',
-                credentialsId: 'githubtoken',
+                credentialsId: 'GithubCred',
                 url: 'https://github.com/Nautilus-Technologies/Test-Environment.git'
                 script {
                     docker.build registry + ":$BUILD_NUMBER"
