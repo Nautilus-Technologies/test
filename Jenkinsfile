@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Cloning Git') {
           steps {
-            git 'https://Oladotunn@github.com/Nautilus-Technologies/Test-Environment.git'
+            git 'https://github.com/Nautilus-Technologies/Test-Environment.git'
             credentialsId: 'GithubCred'
           }
         }
