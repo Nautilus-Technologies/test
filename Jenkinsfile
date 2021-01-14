@@ -9,8 +9,8 @@ pipeline {
     stages {
         stage('Cloning Git') {
           steps {
-            git 'https://github.com/Nautilus-Technologies/Test-Environment.git'
-            credentialsId: 'GithubCred'
+            git 'https://github.com/voltagebots/jenkins.git'
+            // credentialsId: 'GithubCred'
           }
         }
 
