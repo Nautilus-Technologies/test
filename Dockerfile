@@ -4,6 +4,6 @@ COPY . /usr/app
 
 WORKDIR /usr/app
 
-RUN javac /usr/app/src/Main.java
+# RUN javac /usr/app/src/Main.java
 
 CMD ["java", "Main"]
