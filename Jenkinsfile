@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Cloning Git') {
           steps {
-            git 'https://github.com/Nautilus-Technologies/Test-Environment.git'
+            git 'https://github.com/Nautilus-Technologies/test.git/'
             // credentialsId 'JenkinsSSH'
           }
         }
@@ -19,7 +19,7 @@ pipeline {
             // steps {
                 // git branch: 'master',
                 // credentialsId: 'GithubCred',
-                // url: 'https://github.com/Nautilus-Technologies/Test-Environment.git'
+                // url: 'https://github.com/Nautilus-Technologies/test.git/'
                 // script {
                     // docker.build registry + ":$BUILD_NUMBER"
                 // }
