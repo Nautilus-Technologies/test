@@ -25,15 +25,20 @@ pipeline {
                 }
             }
         }
-
+	
+	node{
+    	    stage('init'){
+      	      //init sample
+	     }
         stage('Unit Test') {
             withMaven(maven: 'mvn')
 	    steps {
-                sh 'mvn test'
+                sh "mvn test"
             }
             post {
                 always {
-                    junit 'target/*.xml'
+                    junit "target/*.xml"
+		    }
                 }
             }
         }
