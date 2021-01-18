@@ -13,6 +13,18 @@ pipeline {
             // credentialsId 'JenkinsSSH'
           }
         }
+ 
+
+        stage('Unit Test') {
+            steps {
+                sh 'mvn test'
+            }
+            post {
+                always {
+                    junit 'target/*.xml'
+                }
+            }
+        }
 
         stage('Building image') {
             when {expression { env.GIT_BRANCH == "origin/master" }}     
@@ -23,26 +35,7 @@ pipeline {
                 script {
                     docker.build registry + ":$BUILD_NUMBER"
                 }
-            }
-        }
-	
-	node{
-    	    stage('init'){
-      	      //init sample
-	     }
-        stage('Unit Test') {
-            withMaven(maven: 'mvn')
-	    steps {
-                sh "mvn test"
-            }
-            post {
-                always {
-                    junit "target/*.xml"
-		    }
-                }
-            }
-        }
-        
+            } 
         stage('Remove Unused docker image') {
             steps{
               sh "docker rmi $registry:$BUILD_NUMBER"
