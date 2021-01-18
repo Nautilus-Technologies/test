@@ -29,13 +29,8 @@ pipeline {
         stage('Unit Test') {
             steps {
                 sh 'mvn test'
+            	}
             }
-            post {
-                always {
-                    junit 'target/*.xml'
-                }
-            }
-        }
 
         stage('Remove Unused docker image') {
             steps{
