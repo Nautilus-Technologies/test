@@ -30,7 +30,8 @@ jobs:
       run: mvn -B test --file pom.xml
     - uses: actions/checkout@master
     - name: SonarQube Scan
-      uses: kitabisa/sonarqube-action@v1.0.1
+      # uses: kitabisa/sonarqube-action@v1.0.1
+      uses: SonarSource/gh-action_LT_release@v2
       with:
         host: ${{ secrets.SONARQUBE_HOST }}
         login: ${{ secrets.SONARQUBE_TOKEN }}
