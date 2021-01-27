@@ -30,7 +30,7 @@ jobs:
       run: mvn -B test --file pom.xml
     - uses: actions/checkout@master
     - name: SonarQube Scan
-      uses: kitabisa/sonarqube-action@master
+      uses: warchant/setup-sonar-scanner@v1
       with:
         host: ${{ secrets.SONARQUBE_HOST }}
         login: ${{ secrets.SONARQUBE_TOKEN }}
