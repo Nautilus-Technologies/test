@@ -28,12 +28,13 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
     - name: Build with Maven
       run: mvn -B test --file pom.xml
-    # - uses: actions/checkout@master
+
     - name: SonarQube Scan
       uses: monstar-lab-oss/sonarqube-github-action@v1.0.1
       with:
         url: ${{ secrets.SONARQUBE_HOST }}
         token: ${{ secrets.SONARQUBE_LOGIN }}
+        key: ${{ secrets.SONAR_PROJECT_KEY }}
       # uses: minddocdev/sonarqube-action@master
       # with:
         # app: myApp
