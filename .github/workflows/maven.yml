@@ -30,7 +30,13 @@ jobs:
       run: mvn -B test --file pom.xml
     - uses: actions/checkout@master
     - name: SonarQube Scan
-      uses: warchant/setup-sonar-scanner@v1
+      # uses: warchant/setup-sonar-scanner@v1
+      # with:
+        # host: ${{ secrets.SONARQUBE_HOST }}
+        # login: ${{ secrets.SONARQUBE_TOKEN }}
+      uses: mathrix-education/sonar-scanner@master
       with:
-        host: ${{ secrets.SONARQUBE_HOST }}
-        login: ${{ secrets.SONARQUBE_TOKEN }}
+        version: 4.2.0.1873 # required
+        typescript: true
+        scan: true
+        args: --debug -Dsonar.login=${{ secrets.SONAR_TOKEN }}
