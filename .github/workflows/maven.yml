@@ -34,9 +34,9 @@ jobs:
       # with:
         # host: ${{ secrets.SONARQUBE_HOST }}
         # login: ${{ secrets.SONARQUBE_TOKEN }}
-      uses: mathrix-education/sonar-scanner@master
+      uses: minddocdev/sonarqube-action@master
       with:
-        version: 4.2.0.1873 # required
-        typescript: true
-        scan: true
-        args: --debug -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        # app: myApp
+        # baseDir: myFolder/myApp
+        login: ${{ secrets.SONAR_LOGIN }}
+        url: ${{ secrets.SONARQUBE_HOST }}
