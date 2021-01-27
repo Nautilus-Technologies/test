@@ -33,7 +33,7 @@ jobs:
       uses: monstar-lab-oss/sonarqube-github-action@v1.0.1
       with:
         url: ${{ secrets.SONARQUBE_HOST }}
-        token: ${{ secrets.SONARQUBE_TOKEN }}
+        token: ${{ secrets.SONARQUBE_LOGIN }}
       # uses: minddocdev/sonarqube-action@master
       # with:
         # app: myApp
