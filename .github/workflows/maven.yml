@@ -28,15 +28,15 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
     - name: Build with Maven
       run: mvn -B test --file pom.xml
-    # - uses: actions/checkout@master
+    - uses: actions/checkout@master
     - name: SonarQube Scan
-      # uses: kitabisa/sonarqube-action@master
-      # with:
-        # host: ${{ secrets.SONARQUBE_HOST }}
-        # login: ${{ secrets.SONARQUBE_TOKEN }}
-      uses: lgohr/sonarqube
+      uses: kitabisa/sonarqube-action@v1.1.0
       with:
+        host: ${{ secrets.SONARQUBE_HOST }}
+        login: ${{ secrets.SONARQUBE_TOKEN }}
+      # uses: minddocdev/sonarqube-action@master
+      # with:
         # app: myApp
         # baseDir: myFolder/myApp
-        login: ${{ secrets.SONAR_LOGIN }}
-        url: ${{ secrets.SONARQUBE_HOST }}
+        # login: ${{ secrets.SONAR_LOGIN }}
+        # url: ${{ secrets.SONARQUBE_HOST }}
