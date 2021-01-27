@@ -34,7 +34,7 @@ jobs:
       # with:
         # host: ${{ secrets.SONARQUBE_HOST }}
         # login: ${{ secrets.SONARQUBE_TOKEN }}
-      uses: minddocdev/sonarqube-action@master
+      uses: lgohr/sonarqube@master
       with:
         # app: myApp
         # baseDir: myFolder/myApp
