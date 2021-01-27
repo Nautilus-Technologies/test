@@ -32,8 +32,8 @@ jobs:
     - name: SonarQube Scan
       uses: monstar-lab-oss/sonarqube-github-action@v1.0.1
       with:
-        host: ${{ secrets.SONARQUBE_HOST }}
-        login: ${{ secrets.SONARQUBE_TOKEN }}
+        url: ${{ secrets.SONARQUBE_HOST }}
+        token: ${{ secrets.SONARQUBE_TOKEN }}
       # uses: minddocdev/sonarqube-action@master
       # with:
         # app: myApp
