@@ -32,8 +32,8 @@ jobs:
     - name: SonarQube Scan
       uses: philips-software/sonar-scanner-action@v1.2.0
       with:
-        host: ${{ secrets.SONARQUBE_HOST }}
-        login: ${{ secrets.SONARQUBE_LOGIN }}
+        url: ${{ secrets.SONARQUBE_HOST }}
+        token: ${{ secrets.SONARQUBE_LOGIN }}
         projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
         projectName: ${{ secrets.SONAR_PROJECT_KEY}}
 
