@@ -29,11 +29,11 @@ jobs:
     - name: Build with Maven
       run: mvn -B test --file pom.xml
 
-    - name: SonarQube Scan
-      uses: kitabisa/sonarqube-action@v1.1.0
-      with:
-        host: ${{ secrets.SONARQUBE_HOST }}
-        login: ${{ secrets.SONARQUBE_LOGIN }}
-        projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
-        projectName: ${{ secrets.SONAR_PROJECT_KEY}}
+    # - name: SonarQube Scan
+      # uses: kitabisa/sonarqube-action@v1.1.0
+      # with:
+        # host: ${{ secrets.SONARQUBE_HOST }}
+        # login: ${{ secrets.SONARQUBE_LOGIN }}
+        # projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
+        # projectName: ${{ secrets.SONAR_PROJECT_KEY}}
 
