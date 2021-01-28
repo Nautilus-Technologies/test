@@ -30,7 +30,7 @@ jobs:
       run: mvn -B test --file pom.xml
 
     - name: SonarQube Scan
-      uses: achilleslinux/sonarqube-action@master
+      uses: jzlai/sonarqube-action@v0.0.7
       with:
         host: ${{ secrets.SONARQUBE_HOST }}
         login: ${{ secrets.SONARQUBE_LOGIN }}
