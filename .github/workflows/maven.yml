@@ -30,7 +30,7 @@ jobs:
       # run: mvn -B test --file pom.xml
 
     - name: SonarQube Scan
-      uses: sijomc/sonarscan-action@1.1
+      uses: philips-software/sonar-scanner-action@v1.2.0
       with:
         host: ${{ secrets.SONARQUBE_HOST }}
         login: ${{ secrets.SONARQUBE_LOGIN }}
