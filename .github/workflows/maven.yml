@@ -35,6 +35,7 @@ jobs:
         url: ${{ secrets.SONARQUBE_HOST }}
         token: ${{ secrets.SONARQUBE_LOGIN }}
         projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
+        projectName: ${{ secrets.SONAR_PROJECT_KEY}}
       # uses: minddocdev/sonarqube-action@master
       # with:
         # app: myApp
