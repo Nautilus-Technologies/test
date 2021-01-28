@@ -30,12 +30,12 @@ jobs:
       run: mvn -B test --file pom.xml
 
     - name: SonarQube Scan
-      uses: achilleslinux/sonarqube-actions@achilleslinux
+      uses: sijomc/sonarscan-action@1.1
       with:
         host: ${{ secrets.SONARQUBE_HOST }}
         login: ${{ secrets.SONARQUBE_LOGIN }}
-        # projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
-        # projectName: ${{ secrets.SONAR_PROJECT_KEY}}
+        projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
+        projectName: ${{ secrets.SONAR_PROJECT_KEY}}
       # uses: minddocdev/sonarqube-action@master
       # with:
         # app: myApp
