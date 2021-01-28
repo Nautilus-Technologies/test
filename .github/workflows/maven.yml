@@ -30,9 +30,7 @@ jobs:
       run: mvn -B test --file pom.xml
 
     - name: SonarQube Scan
-      uses: - name: SonarQube Scan
-  uses: kitabisa/sonarqube-action@v1.1.0
-
+      uses: kitabisa/sonarqube-action@v1.1.0
       with:
         host: ${{ secrets.SONARQUBE_HOST }}
         login: ${{ secrets.SONARQUBE_LOGIN }}
